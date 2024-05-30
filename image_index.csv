@@ -1,0 +1,16 @@
+filename,genotype,condition,date,block,layer_number,rep_number,k_value,scale
+raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,Wild Type,500uE 1 hour,2022-1-10,1,13,,29k,200
+raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,Wild Type,500uE 1 hour,2022-1-10,1,16,,29k,200
+raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,Wild Type,500uE 1 hour,2022-1-10,1,25,,29k,200
+raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,Wild Type,500uE 1 hour,2022-1-10,2,41,,25k,500
+raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,Wild Type,500uE 1 hour,2022-1-10,3,28,,19k,500
+raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,Wild Type,500uE 1 hour,2022-1-10,3,64,,19k,500
+raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,Wild Type,500uE 1 hour,2022-1-10,3,69,,19k,500
+raw_images/2023-2-14_Wild Type_500uE 1 hour_3_018_19k.png,Wild Type,500uE 1 hour,2023-2-14,3,018,,19k,500
+raw_images/2023-2-14_Wild Type_500uE 1 hour_3_020_19k.png,Wild Type,500uE 1 hour,2023-2-14,3,020,,19k,500
+raw_images/2023-7-26_Wild Type_500uE 1 hour_1_014_19k.png,Wild Type,500uE 1 hour,2023-7-26,1,014,,19k,500
+raw_images/2023-7-26_Wild Type_500uE 1 hour_1_033_19k.png,Wild Type,500uE 1 hour,2023-7-26,1,033,,19k,500
+raw_images/2023-7-26_Wild Type_500uE 1 hour_2_013_19k.png,Wild Type,500uE 1 hour,2023-7-26,2,013,,19k,500
+raw_images/2023-7-26_Wild Type_500uE 1 hour_2_025_19k.png,Wild Type,500uE 1 hour,2023-7-26,2,025,,19k,500
+raw_images/2023-7-26_Wild Type_500uE 1 hour_3_008_19k.png,Wild Type,500uE 1 hour,2023-7-26,3,008,,19k,500
+raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,Wild Type,500uE 1 hour,2023-7-26,3,024,,19k,500
