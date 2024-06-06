@@ -12,6 +12,9 @@ def clear_directory(directory):
 def load_image(image_path):
     return cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
+def load_image_bgr(image_path):
+    return cv2.imread(image_path, cv2.IMREAD_COLOR)
+
 def equalize_histogram(image):
     return cv2.equalizeHist(image)
 
@@ -89,12 +92,11 @@ def detect_lines(image, threshold=100, min_line_length=50, max_line_gap=10):
     lines = cv2.HoughLinesP(image, 1, np.pi / 180, threshold=threshold, minLineLength=min_line_length, maxLineGap=max_line_gap)
     return lines
 
-def draw_lines_on_mask(lines, image_shape):
-    mask = np.zeros(image_shape, dtype=np.uint8)
+def draw_lines_on_image(lines, image):
     for line in lines:
         for x1, y1, x2, y2 in line:
-            cv2.line(mask, (x1, y1), (x2, y2), (255), thickness=2)
-    return mask
+            cv2.line(image, (x1, y1), (x2, y2), (0, 255, 0), thickness=2) # Drawing lines in green
+    return image
 
 def main(image_path, example=False):
     processed_image = preprocess_image(image_path)
@@ -121,17 +123,14 @@ def main(image_path, example=False):
         print("No lines were detected")
         return
 
-    # Draw lines on mask and save
-    line_mask = draw_lines_on_mask(lines, original_image.shape)
-    
-    # draw the line mask on the original image, as a visual check. Use red
-
+   # Draw lines on the original image and save
+    bgr_image = load_image_bgr(image_path)
+    line_image = draw_lines_on_image(lines, bgr_image)
     line_image_path = f"./line_images/{os.path.basename(image_path)}"
-    cv2.imwrite(line_image_path, line_mask)
+    cv2.imwrite(line_image_path, line_image)
 
     # now do the rotation
     rotation_angle = calculate_rotation_angle(lines)
-    original_image = load_image(image_path)
     rotated_image = rotate_image(original_image, rotation_angle)
     
     if example:
