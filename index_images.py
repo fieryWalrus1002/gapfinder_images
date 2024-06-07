@@ -3,6 +3,8 @@ import glob
 from PIL import Image
 import csv
 import cv2
+# https://github.com/UB-Mannheim/tesseract/wiki to install tesseract
+# pip install pillow opencv-python pytesseract
 import pytesseract
 import re
 import os
