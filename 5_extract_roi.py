@@ -26,7 +26,7 @@ roi_metadata_file = './roi_metadata.csv'
 roi_metadata = pd.read_csv(roi_metadata_file)
 
 # Folder paths
-rotated_images_folder = './rotated_images2'
+rotated_images_folder = './rotated_images'
 roi_images_folder = './roi_images'
 
 # Create the ROI images folder if it doesn't exist
@@ -37,6 +37,10 @@ if not os.path.exists(roi_images_folder):
 for index, row in roi_metadata.iterrows():
     strip_filename = row['strip_filename']
     x1, y1, x2, y2 = int(row['x1']), int(row['y1']), int(row['x2']), int(row['y2'])
+
+    if x1 == x2 or y1 == y2:
+        print(f"Invalid coordinates for strip {strip_filename}")
+        continue
 
     # Load the rotated image
     image_path = os.path.join(rotated_images_folder, strip_filename)
@@ -52,7 +56,11 @@ for index, row in roi_metadata.iterrows():
 
     # Save the ROI
     roi_image_path = os.path.join(roi_images_folder, strip_filename)
-    cv2.imwrite(roi_image_path, roi)
+    try:
+        cv2.imwrite(roi_image_path, roi)
+    except Exception as e:
+        print(f"Error saving ROI to {roi_image_path}: {e}")
+        continue
 
     print(f"Saved ROI to {roi_image_path}")
 
