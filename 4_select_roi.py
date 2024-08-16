@@ -95,6 +95,11 @@ def save_roi_coordinates(output_file, metadata: pd.DataFrame, rois: list):
                 metadata_row = metadata_row.values.tolist()[0]
                 writer.writerow(metadata_row + [roi['x1'], roi['y1'], roi['x2'], roi['y2']])
 
+def displayCommands():
+    print("Press 's' to save the ROI coordinates.")
+    print("Press 'q' to quit the program.")
+    print("Press 'h' to display this message.")
+
 
 def combine_metadata_and_angles(metadata: pd.DataFrame, rotation_angles: pd.DataFrame) -> pd.DataFrame:
     """ Combine the metadata and rotation angles into a single dataframe. Retain only the metadata for the images that have rotation angles. """
@@ -153,7 +158,7 @@ if __name__ == "__main__":
 
         while True:
             key = cv2.waitKey(0) & 0xFF
-            if key == ord('s'):
+            if key == ord('s') or key == ord('n') or key == 9 or key == ord('t'):  # Combine 's', 'n', Tab, and 't' keys
                 roi_data = {
                     'strip_filename': image_name,
                     'x1': x_init,
@@ -165,8 +170,9 @@ if __name__ == "__main__":
                 # save the displayed roi to the output file
                 cv2.imwrite(f"{roi_context_dir}/{image_name}", image)
                 break
-            elif key == ord(''):
+            elif key == ord('h'):
                 displayCommands()
+                break
             elif key == ord('q'):
                 # now we save the new_rois to the output_file
                 if new_rois:
@@ -182,7 +188,3 @@ if __name__ == "__main__":
 
     print(f"ROI coordinates saved to {output_file}.")
 
-def displayCommands():
-    print("Press 's' to save the ROI coordinates.")
-    print("Press 'q' to quit the program.")
-    print("Press 'h' to display this message.")

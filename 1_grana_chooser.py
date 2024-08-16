@@ -2,11 +2,12 @@ import cv2
 import os
 import csv
 import glob
+import argparse
 
 # Global variables
 current_image_index = 0
 images = []
-image_folder = "./raw_images"
+WINDOW_NAME = "Grana Chooser"
 roi_list = []
 rect_size = 200  # Size of the rectangle (fixed size)
 drawing = False
@@ -16,9 +17,9 @@ coord_text = "(0, 0)"
 
 def displayCommands():
     print("Available commands:")
-    print("  n: Move to the next image.")
-    print("  r: Reset the current image and remove the ROIs.")
-    print("  q: Quit the program and save the ROI data processed so far.")
+    print("  n (or tab, or t): Move to the next image, saving the ROI list for this image.")
+    print("  r (or e): Reset the current image and remove the ROIs.")
+    print("  q: Quit the program and save the ROI data processed for all images so far.")
 
 def load_image(index):
     """Loads an image from the images list based on the index."""
@@ -45,7 +46,7 @@ def mouse_callback(event, x, y, flags, param):
         ix, iy = int(x / resize_factor), int(y / resize_factor)
         roi_list.append((ix, iy))
         # cv2.circle(display_image, (x, y), 3, (0, 255, 0), -1)
-        cv2.imshow("Image", display_image)
+        cv2.imshow(WINDOW_NAME, display_image)
 
     elif event == cv2.EVENT_MOUSEMOVE:
         if drawing:
@@ -54,48 +55,52 @@ def mouse_callback(event, x, y, flags, param):
             # Display current coordinates in the lower left corner
             coord_text = f"({x}, {y})"
             # cv2.putText(temp_img, coord_text, (10, temp_img.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
-            cv2.imshow("Image", temp_img)
+            cv2.imshow(WINDOW_NAME, temp_img)
         else:
             # Display current coordinates in the lower left corner even when not drawing
             temp_img = display_image.copy()
             coord_text = f"({x}, {y})"
             # cv2.putText(temp_img, coord_text, (10, temp_img.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
-            cv2.imshow("Image", temp_img)
+            cv2.imshow(WINDOW_NAME, temp_img)
 
     elif event == cv2.EVENT_LBUTTONUP:
         drawing = False
         draw_rectangle(display_image, (x, y), rect_size, resize_factor)
         roi_list[-1] = (int(x / resize_factor), int(y / resize_factor))  # Update the last ROI with final position
-        cv2.imshow("Image", display_image)
+        cv2.imshow(WINDOW_NAME, display_image)
 
-def save_roi(image_name, roi_list, folder):
+def save_roi(image_name, roi_list, folder, output_filename):
     """Saves the ROI information to a csv file."""
-    csv_path = os.path.join(folder, 'roi_data.csv')
+    csv_path = os.path.join(folder, output_filename)
+    
+    # check to see if the file exists, if not, write the header
+    if not os.path.exists(csv_path):
+        with open(csv_path, 'w', newline='') as csvfile:
+            csv_writer = csv.writer(csvfile)
+            csv_writer.writerow(['filename', 'x', 'y', 'scale'])
+    
+    print(f"Saving ROI data to {csv_path}")
     with open(csv_path, 'a', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         for roi in roi_list:
             csv_writer.writerow([image_name, roi[0], roi[1], rect_size])
             
-def clear_roi_data(folder):
-    """Clears the ROI data file."""
-    csv_path = os.path.join(folder, 'roi_data.csv')
-    if os.path.exists(csv_path):
-        os.remove(csv_path)
-
-def main():
+def main(args):
     global current_image_index, images, roi_list, coord_text
 
-    # clear_roi_data(image_folder)
-
     # Load all image paths
-    images = glob.glob(f"{image_folder}/*.png")
+    images = glob.glob(f"{args.input_folder}/*.png")
     if not images:
-        print("No images found in the folder.")
+        print(f"No images found in the folder '{args.input_folder}'.")
         return
     else:
         print(f"Found {len(images)} images in the folder.")
 
-    cv2.namedWindow("Image")
+    cv2.namedWindow(WINDOW_NAME)
+
+    displayCommands()
+    
+    print(f"Will save the ROI data to '{args.output_filename}' in the folder '{args.input_folder}'.")
 
     while True:
         image, image_name = load_image(current_image_index)
@@ -106,41 +111,47 @@ def main():
         display_image = resized_image.copy()
 
         # Set mouse callback with original and display image
-        cv2.setMouseCallback("Image", mouse_callback, (image, display_image))
+        cv2.setMouseCallback(WINDOW_NAME, mouse_callback, (image, display_image))
 
         while True:
             temp_img = display_image.copy()
             
             # display the coordinates of the current ROI
             cv2.putText(temp_img, image_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            
             # display the current image index, out of the max number of images
             cv2.putText(temp_img, f"Image {current_image_index + 1}/{len(images)}", (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
             cv2.putText(temp_img, coord_text, (10, temp_img.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
 
-            cv2.imshow("Image", temp_img)
-            displayCommands()
+            cv2.imshow(WINDOW_NAME, temp_img)
 
             key = cv2.waitKey(1) & 0xFF
             if key == ord('q'):
-                save_roi(image_name, roi_list, image_folder)
+                save_roi(image_name, roi_list, args.input_folder, args.output_filename)
                 cv2.destroyAllWindows()
                 return
-            elif key == ord('n'):
-                save_roi(image_name, roi_list, image_folder)
-                current_image_index = (current_image_index + 1) % len(images)
-                break
-            elif key == 9:  # Tab key does the same as 'n'
-                save_roi(image_name, roi_list, image_folder)
+            elif key == ord('n') or key == 9 or key == ord('t'):  # Combine 'n' and Tab key
+                save_roi(image_name, roi_list, args.input_folder, args.output_filename)
                 current_image_index = (current_image_index + 1) % len(images)
                 break
             elif key == ord('h'):
                 displayCommands()
-            elif key == ord('r'):
+                break
+            elif key == ord('r') or key == 'e': # Reset the current image, erase the ROI list
                 roi_list = []
                 display_image = resized_image.copy()  # Reset to the original resized image
                 break
 
 
-
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Choose the ROIs for the grana images")
+    parser.add_argument('-i', '--input_folder', type=str, default='./raw_images', help='The folder containing the images to work through')
+    parser.add_argument('-o', '--output_filename', type=str, default='centroids.csv', help='The filename to save the ROI data')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Print out extra information')
+
+    args = parser.parse_args()
+
+    if args.verbose:
+        print(f"Arguments: {args}")
+
+    main(args)

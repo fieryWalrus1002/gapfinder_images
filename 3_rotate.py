@@ -5,7 +5,7 @@ import glob
 import shutil
 
 # Global variables for mouse callback
-destination_folder = "./rotated_images2"
+destination_folder = "./rotated_images"
 drawing = False
 x_start, y_start, x_end, y_end = -1, -1, -1, -1
 image = None
@@ -101,7 +101,7 @@ if __name__ == "__main__":
 
         while image_path not in existing_rotation_angles:
             key = cv2.waitKey(0) & 0xFF
-            if key == ord('s'):
+            if key == ord('s') or key == ord('n') or key == 9 or key == ord('t'):  # Combine 's', 'n', Tab, and 't' keys
                 rotation_angle = calculate_rotation_angle_from_line(x_start, y_start, x_end, y_end)
                 print(f"Rotation angle: {rotation_angle}")
                 rotated_image = rotate_image(original_image, rotation_angle)
@@ -110,7 +110,7 @@ if __name__ == "__main__":
                 cv2.imwrite(output_path, rotated_image)
                 existing_rotation_angles[os.path.basename(image_path)] = rotation_angle
                 break
-            elif key == ord('r'):
+            elif key == ord('r') or key == ord('e'):
                 image = original_image.copy()
                 cv2.imshow('Image', image)
             elif key == ord('h'):

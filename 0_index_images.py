@@ -10,12 +10,34 @@ import re
 import os
 import glob
 import re
+import argparse
 
-def process_image(filename):
+def print_metadata(metadata):
+    # print this out in a pretty way. 
+    print(f"Filename: {metadata['filename']}")
+    print(f"Genotype: {metadata['genotype']}")
+    print(f"Condition: {metadata['condition']}")
+    print(f"Date: {metadata['date']}")
+    print(f"Block: {metadata['block']}")
+    print(f"Layer number: {metadata['layer_number']}")
+    print(f"K value: {metadata['k_value']}")
+    print(f"Scale: {metadata['scale']}")
+    print("\n")
+
+def process_image(filename, input_folder='./input_images'):
+    # Normalize paths to avoid issues with different OS path separators
+    input_folder = os.path.normpath(input_folder)
+    filename = os.path.normpath(filename)
+    
     print(f"Filename: {filename}")
     
     # Extract metadata from folder structure
-    folder_parts = filename.strip().split('\\')
+    folder_parts = filename.strip().split(os.sep)  # Use os.sep to split based on the OS-specific separator
+    
+    # Check if input_folder is a prefix of the filename path
+    if os.path.commonpath([input_folder, filename]) == input_folder:
+        folder_parts = folder_parts[len(input_folder.split(os.sep)):]
+
     # print(f"Folder parts: {folder_parts}")
     genotype_condition = folder_parts[0].split('-')
     # print(f"Genotype and condition: {genotype_condition}")
@@ -37,7 +59,6 @@ def process_image(filename):
     k_value = filename_parts[-1].split('.')[0]
     scale = scan_for_text(filename)
 
-
     # Create dict to store metadata
     metadata = {
         'filename': basename,
@@ -50,11 +71,11 @@ def process_image(filename):
         'scale': scale
         }
     
-    print(metadata)
+    print_metadata(metadata)
 
     return metadata
 
-def scan_for_text(filename):
+def scan_for_text(filename):#
         # load the image using opencv
         bgr_image = cv2.imread(filename)
 
@@ -76,13 +97,20 @@ def scan_for_text(filename):
         # Find the greatest numeric value
         return max(numeric_values)
 
-def main():
-    os.makedirs('raw_images', exist_ok=True)
-    os.makedirs('ocr_images', exist_ok=True)
+# Main function
+def main(args):  
+    os.makedirs(args.input_folder, exist_ok=True)
+    os.makedirs(args.output_folder, exist_ok=True)
 
     # Open or create CSV file for image metadata
-    csv_filename = 'image_index.csv'
+    csv_filename = './image_index.csv'
     csv_exists = os.path.exists(csv_filename)
+    
+    # print out to console what we are doing, what image folders we are looking at, etc
+    if csv_exists:
+        print(f"CSV filename: {csv_filename} exists, appending to file")
+    else:
+        print(f"CSV filename: {csv_filename} does not exist, creating new file")
 
     with open(csv_filename, 'a', newline='') as csvfile:
         fieldnames = ['filename', 'genotype', 'condition', 'date', 'block', 'layer_number', 'rep_number', 'k_value', 'scale']
@@ -98,7 +126,7 @@ def main():
             # Process image and get metadata
             metadata = process_image(filename)
         
-            # Save image as PNG with appropriate name
+            # Save image as PNG with appropriate name in raw_images folder
             image = Image.open(filename)
             new_filename = f"raw_images/{metadata['date']}_{metadata['genotype']}_{metadata['condition']}_{metadata['block']}_{metadata['layer_number']}_{metadata['k_value']}.png"
             image.save(new_filename)
@@ -106,6 +134,18 @@ def main():
             # Write metadata to CSV
             metadata['filename'] = new_filename
             writer.writerow(metadata)
-
+            
+        print(f"Finished processing images, saved output to CSV file at {csv_filename}")
+            
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Process images and extract metadata")
+    parser.add_argument('-i', '--input_folder', type=str, default='./input_images', help='The folder containing the images to process')
+    parser.add_argument('-o', '--output_folder', type=str, default='./raw_images', help='The folder to save the processed images')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Print out extra information')
+
+    args = parser.parse_args()
+
+    if args.verbose:
+        print(f"Arguments: {args}")
+
+    main(args)

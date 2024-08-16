@@ -9,6 +9,7 @@ import os
 import glob
 import re
 import pandas as pd
+import shutil
 
 
 def extract_centroid(bgr_image, x, y, box_size):
@@ -51,6 +52,8 @@ def main():
 
     # open the centroids.csv in the raw_images folder
     df = pd.read_csv("./raw_images/centroids.csv")
+    
+    print(df.head())
     
     for index, row in df.iterrows():
         filename = f"./raw_images/{row[0]}"
