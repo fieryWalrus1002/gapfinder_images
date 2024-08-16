@@ -14,6 +14,11 @@ ix, iy = -1, -1
 resize_factor = 0.25  # Factor to resize the image for display
 coord_text = "(0, 0)"
 
+def displayCommands():
+    print("Available commands:")
+    print("  n: Move to the next image.")
+    print("  r: Reset the current image and remove the ROIs.")
+    print("  q: Quit the program and save the ROI data processed so far.")
 
 def load_image(index):
     """Loads an image from the images list based on the index."""
@@ -113,6 +118,7 @@ def main():
             cv2.putText(temp_img, coord_text, (10, temp_img.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
 
             cv2.imshow("Image", temp_img)
+            displayCommands()
 
             key = cv2.waitKey(1) & 0xFF
             if key == ord('q'):
@@ -127,6 +133,8 @@ def main():
                 save_roi(image_name, roi_list, image_folder)
                 current_image_index = (current_image_index + 1) % len(images)
                 break
+            elif key == ord('h'):
+                displayCommands()
             elif key == ord('r'):
                 roi_list = []
                 display_image = resized_image.copy()  # Reset to the original resized image

@@ -148,6 +148,7 @@ if __name__ == "__main__":
         cv2.imshow('Image', image)
         cv2.setMouseCallback('Image', draw_rectangle)
 
+        displayCommands()
         print(f"Select ROI for {image_name}. Press 's' to save ROI, 'q' to quit.")
 
         while True:
@@ -164,6 +165,8 @@ if __name__ == "__main__":
                 # save the displayed roi to the output file
                 cv2.imwrite(f"{roi_context_dir}/{image_name}", image)
                 break
+            elif key == ord(''):
+                displayCommands()
             elif key == ord('q'):
                 # now we save the new_rois to the output_file
                 if new_rois:
@@ -178,3 +181,8 @@ if __name__ == "__main__":
     cv2.destroyAllWindows()
 
     print(f"ROI coordinates saved to {output_file}.")
+
+def displayCommands():
+    print("Press 's' to save the ROI coordinates.")
+    print("Press 'q' to quit the program.")
+    print("Press 'h' to display this message.")
