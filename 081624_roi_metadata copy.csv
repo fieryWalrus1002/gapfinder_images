@@ -1,0 +1,178 @@
+strip,filename,box_size,x,y,strip_filename,rotation_angle,x1,y1,x2,y2
+0,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1000,1100,strip_0.png,-27.718501628183358,111,25,145,199
+1,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1728,1332,strip_1.png,-28.30075576600638,-1,-1,-1,-1
+10,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,540,708,strip_10.png,-49.444106121652695,59,34,136,186
+100,./raw_images/2023-7-26_Wild Type_500uE 1 hour_2_025_19k.png,200,276,1580,strip_100.png,-61.92751306414704,90,64,174,116
+101,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,1264,1220,strip_101.png,-34.04593735660167,121,31,178,111
+102,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,1564,1400,strip_102.png,-45.29686666732469,39,33,109,113
+103,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,1148,1720,strip_103.png,-38.30873556744772,96,56,177,137
+104,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,792,1464,strip_104.png,-35.81608074915565,77,70,150,154
+105,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,1092,732,strip_105.png,-29.60445074600491,115,34,182,120
+106,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,900,660,strip_106.png,-17.543257715400127,55,48,155,177
+107,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,1060,1444,strip_107.png,-20.41842551743132,55,48,155,177
+108,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,804,944,strip_108.png,-15.185837262201323,167,159,98,83
+109,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,1016,1056,strip_109.png,-13.055247223796602,98,54,146,132
+11,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1312,812,strip_11.png,-30.379126011368342,98,54,146,132
+110,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,1268,532,strip_110.png,-57.90740867126584,83,13,144,180
+111,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,1664,968,strip_111.png,-63.43494882292201,63,78,124,158
+112,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,1732,464,strip_112.png,-70.53413299164758,60,45,125,128
+113,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,716,1536,strip_113.png,-68.68208772453845,40,21,92,194
+114,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,480,1384,strip_114.png,-65.26049113025188,86,21,133,144
+115,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,1028,464,strip_115.png,89.02897806892084,63,41,118,181
+116,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,1836,1688,strip_116.png,90.52563460645761,71,147,144,44
+117,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,1528,568,strip_117.png,84.34051815983753,148,50,190,138
+118,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,1048,1252,strip_118.png,93.301865674435,116,40,171,183
+119,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,548,732,strip_119.png,110.72555886556054,92,63,147,146
+12,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1860,828,strip_12.png,-34.60567555163857,92,63,147,146
+120,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1376,276,strip_120.png,5.834788996841338,80,37,119,173
+121,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1308,672,strip_121.png,12.48808576894851,90,33,153,152
+122,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1132,784,strip_122.png,12.840679012092783,51,158,111,60
+123,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1292,1172,strip_123.png,21.551937422042183,78,13,141,132
+124,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1176,1308,strip_124.png,-3.6044205391757043,78,13,141,132
+125,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,1140,208,strip_125.png,89.06080905426442,63,34,133,190
+126,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,1016,764,strip_126.png,93.50353164478446,49,134,86,174
+127,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,1296,752,strip_127.png,91.30195267257888,13,116,78,197
+128,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,1356,1256,strip_128.png,102.2647737278924,75,65,150,144
+129,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,920,1856,strip_129.png,111.67044793267641,90,37,172,147
+13,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,152,1892,strip_13.png,-41.32550047917034,90,37,172,147
+130,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_003_25k.png,200,1372,1288,strip_130.png,-18.76486329289629,54,158,107,31
+131,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_003_25k.png,200,1584,1440,strip_131.png,-21.186176440399137,81,41,138,153
+132,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,1580,1328,strip_132.png,39.67425937523228,126,81,126,81
+133,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,1168,1768,strip_133.png,29.412494716752665,119,32,168,175
+134,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,740,540,strip_134.png,38.20405598398105,92,77,157,151
+135,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,504,676,strip_135.png,37.568592028827496,101,72,165,148
+136,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1064,1104,strip_136.png,-28.30075576600638,101,72,165,148
+137,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,512,728,strip_137.png,-50.23954368542925,96,53,96,53
+138,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1052,1084,strip_138.png,-28.009176708013836,64,23,125,186
+139,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,540,736,strip_139.png,-47.66988976200763,82,17,160,167
+14,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,652,1080,strip_14.png,-13.557192929535644,109,52,167,146
+140,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1680,1200,strip_140.png,-5.194428907734806,109,52,167,146
+141,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,712,1040,strip_141.png,-15.407703640642021,52,73,113,172
+142,./raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,200,324,1572,strip_142.png,54.400780041023836,49,36,120,145
+143,./raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,200,1212,1640,strip_143.png,104.03624346792648,138,157,105,53
+144,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,148,868,strip_144.png,0.7440592028887094,84,33,121,164
+145,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,408,1096,strip_145.png,50.76788889791415,84,33,121,164
+146,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1144,1752,strip_146.png,46.453895465108886,105,18,149,188
+147,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1036,888,strip_147.png,57.52880770915151,105,18,149,188
+148,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1228,1432,strip_148.png,51.58194465517801,82,43,132,144
+149,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,200,1028,956,strip_149.png,103.92096036492076,101,45,146,159
+15,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1164,636,strip_15.png,-31.167172646102262,101,45,146,159
+150,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,200,836,596,strip_150.png,115.64100582430528,101,45,146,159
+151,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,200,1200,636,strip_151.png,101.01711161878922,101,45,146,159
+152,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,200,1488,704,strip_152.png,95.5915577557572,15,20,45,101
+153,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,200,1252,1484,strip_153.png,91.73570458892839,15,20,45,101
+154,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,672,456,strip_154.png,-45.7376731374322,64,47,116,157
+155,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,1404,560,strip_155.png,-46.101706115206376,99,77,143,170
+156,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,1364,1372,strip_156.png,-49.282878465246135,99,77,143,170
+157,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,48,1172,strip_157.png,-50.355825042855194,74,177,97,5
+158,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,840,984,strip_158.png,-55.4914770123316,74,177,97,5
+159,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,652,356,strip_159.png,-54.979921145744555,74,30,122,180
+16,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1584,1196,strip_16.png,-7.083285999752563,74,30,122,180
+160,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,876,408,strip_160.png,-55.45625059223088,80,56,126,160
+161,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,1564,340,strip_161.png,-36.86989764584402,68,20,111,133
+162,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,1204,400,strip_162.png,-60.38206630812958,132,57,170,121
+163,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,1372,684,strip_163.png,-49.398705354995535,121,63,163,141
+164,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,1420,1048,strip_164.png,-46.101706115206376,121,63,163,141
+165,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,1392,1424,strip_165.png,-52.094749167611035,55,69,101,161
+166,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,860,1624,strip_166.png,-42.461455401601214,55,69,101,161
+167,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,200,1668,592,strip_167.png,14.187619019317571,55,69,101,161
+168,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,200,1436,268,strip_168.png,17.867682413064077,100,63,131,132
+169,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,200,956,524,strip_169.png,7.765166018425333,91,25,127,177
+17,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,164,1368,strip_17.png,-5.10216525235819,91,25,127,177
+170,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,200,1496,1024,strip_170.png,22.26399511741855,25,168,59,50
+171,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,200,172,880,strip_171.png,1.5650690855922627,52,59,93,159
+172,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_025_19k.png,200,1832,1052,strip_172.png,0.0,52,59,93,159
+173,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_025_19k.png,200,804,1300,strip_173.png,4.222230206142689,52,59,93,159
+174,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_025_19k.png,200,908,1616,strip_174.png,-6.648645183268905,82,65,123,148
+175,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_025_19k.png,200,1404,576,strip_175.png,-5.5915577557571865,82,65,123,148
+176,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_025_19k.png,200,1904,468,strip_176.png,-3.7461620496036296,71,52,122,146
+177,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,200,656,840,strip_177.png,-35.94211187138234,71,52,122,146
+178,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,200,1608,936,strip_178.png,-12.140247960278224,95,135,138,7
+179,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,200,1832,332,strip_179.png,-11.309932474020213,93,69,136,177
+18,./raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,200,296,1528,strip_18.png,55.06906269888942,83,39,136,149
+180,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,200,992,1040,strip_180.png,-27.585803384691324,77,83,115,158
+181,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,200,436,1720,strip_181.png,-50.572197803963796,78,38,141,152
+182,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,200,1200,768,strip_182.png,-20.7415878984374,97,194,138,104
+183,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,200,212,1328,strip_183.png,-44.36575528557388,154,57,195,147
+184,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,200,908,300,strip_184.png,-40.68397248013438,87,44,136,137
+185,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,200,1124,376,strip_185.png,-41.25235502523396,71,32,107,134
+186,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,200,1700,556,strip_186.png,-36.86989764584402,148,13,104,124
+187,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,200,864,1284,strip_187.png,-63.954231699511176,72,69,130,151
+188,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,200,768,1868,strip_188.png,-67.98871680208065,114,65,165,157
+189,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,200,596,1932,strip_189.png,-61.189206257026946,114,29,167,134
+19,./raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,200,288,376,strip_19.png,-54.61456927090095,142,62,182,147
+190,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,200,444,1032,strip_190.png,-50.46384281323664,93,62,137,159
+191,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,200,648,464,strip_191.png,-51.49352531253926,96,89,151,148
+192,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,200,1812,712,strip_192.png,-34.405234287662864,150,37,186,145
+193,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,200,1288,1224,strip_193.png,-36.807483967358,97,21,133,186
+194,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,200,1056,1028,strip_194.png,-36.52885536698517,64,71,99,145
+195,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,200,680,1656,strip_195.png,-58.97293324008735,11,56,51,142
+196,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,200,268,1164,strip_196.png,-55.40771131249006,77,38,119,127
+197,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,200,640,1020,strip_197.png,-51.64864518326891,112,68,159,129
+198,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,872,304,strip_198.png,57.41163858922659,74,198,103,35
+199,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,1400,792,strip_199.png,67.57957256402631,74,198,103,35
+2,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,284,1524,strip_2.png,-46.548157698977974,74,198,103,35
+20,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,1520,572,strip_20.png,30.796062046485968,74,198,103,35
+200,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,1092,784,strip_200.png,55.71312302279104,112,80,157,157
+201,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,908,1244,strip_201.png,64.3741397686576,129,66,169,146
+202,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,1032,1700,strip_202.png,66.9649555108147,135,45,185,126
+203,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_031_19k.png,200,1044,268,strip_203.png,42.87890360333855,103,38,146,151
+204,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_031_19k.png,200,1384,616,strip_204.png,47.37184218978922,111,51,151,148
+205,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_031_19k.png,200,1516,1052,strip_205.png,47.57558255631633,128,68,182,137
+206,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_031_19k.png,200,1580,1632,strip_206.png,55.79654317182435,74,19,144,159
+207,./raw_images/2023-2-9_Wild Type_Dark Adapted_2_041_19k.png,200,1532,408,strip_207.png,69.12535317354998,82,32,161,157
+208,./raw_images/2023-2-9_Wild Type_Dark Adapted_2_041_19k.png,200,1668,1344,strip_208.png,80.0493733120484,38,52,83,147
+209,./raw_images/2023-2-9_Wild Type_Dark Adapted_2_041_19k.png,200,1124,996,strip_209.png,83.94580810588516,38,52,83,147
+21,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,132,868,strip_21.png,1.4057492610463351,63,35,114,163
+210,./raw_images/2023-2-9_Wild Type_Dark Adapted_2_041_19k.png,200,1308,1156,strip_210.png,83.95149333899937,105,87,152,156
+211,./raw_images/2023-2-9_Wild Type_Dark Adapted_2_041_19k.png,200,572,1004,strip_211.png,83.7031812810156,105,87,152,156
+212,./raw_images/2023-2-9_Wild Type_Dark Adapted_2_041_19k.png,200,320,492,strip_212.png,75.96375653207353,105,87,152,156
+213,./raw_images/2023-7-26_Wild Type_500uE 1 hour_1_014_19k.png,200,792,556,strip_213.png,84.65694424142484,141,32,183,112
+214,./raw_images/2023-7-26_Wild Type_500uE 1 hour_1_014_19k.png,200,1724,1192,strip_214.png,62.14034930475773,72,27,115,137
+215,./raw_images/2023-7-26_Wild Type_500uE 1 hour_1_014_19k.png,200,1396,1668,strip_215.png,51.55418059039276,12,80,63,158
+216,./raw_images/2023-7-26_Wild Type_500uE 1 hour_1_014_19k.png,200,1736,1848,strip_216.png,55.188628008453485,12,80,63,158
+217,./raw_images/2023-7-26_Wild Type_500uE 1 hour_1_014_19k.png,200,1460,1096,strip_217.png,62.300527191945,12,80,63,158
+218,./raw_images/2023-7-26_Wild Type_500uE 1 hour_1_033_19k.png,200,1356,340,strip_218.png,-15.172915345525261,13,69,80,140
+219,./raw_images/2023-7-26_Wild Type_500uE 1 hour_1_033_19k.png,200,1224,1304,strip_219.png,-18.43494882292201,80,49,145,120
+22,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,1904,1876,strip_22.png,59.34933204294713,80,49,145,120
+220,./raw_images/2023-7-26_Wild Type_500uE 1 hour_1_033_19k.png,200,1304,1624,strip_220.png,-16.049004792533196,70,122,135,181
+221,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_008_19k.png,200,1640,608,strip_221.png,74.33789365467396,40,73,117,156
+222,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_008_19k.png,200,552,352,strip_222.png,102.52880770915151,30,60,103,153
+223,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_008_19k.png,200,424,776,strip_223.png,104.03624346792648,51,34,124,128
+224,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,1084,732,strip_224.png,-30.481389990823942,80,40,147,125
+225,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,696,656,strip_225.png,-30.625532718694657,69,80,127,148
+226,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,1164,1252,strip_226.png,-29.569531333267772,29,57,88,132
+227,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,776,1324,strip_227.png,-38.1909498203866,29,57,88,132
+228,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,900,1080,strip_228.png,-12.875001559612476,60,59,147,140
+229,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,932,676,strip_229.png,-17.12804747359667,63,25,135,152
+23,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,956,412,strip_23.png,5.675355885169155,142,75,190,156
+230,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,960,1360,strip_230.png,-20.794114955503648,142,75,190,156
+231,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,1248,504,strip_231.png,-55.71312302279104,142,75,190,156
+232,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,704,1596,strip_232.png,-67.44912451833304,85,13,127,183
+233,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,472,1384,strip_233.png,-66.70988275987125,89,30,161,153
+234,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,208,1364,strip_234.png,-72.5319767487223,114,49,151,162
+235,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,1028,396,strip_235.png,-89.16362467457759,63,21,149,156
+236,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,1228,528,strip_236.png,-82.1309244482095,65,63,119,132
+237,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,1564,724,strip_237.png,-94.11818970398878,65,63,119,132
+238,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,1844,1660,strip_238.png,-89.48383577023516,97,42,149,145
+239,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,804,1848,strip_239.png,-81.5110561194953,61,72,133,143
+24,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1152,1768,strip_24.png,48.34032207969886,61,72,133,143
+240,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1388,712,strip_240.png,14.870957355858042,55,13,119,128
+241,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1224,252,strip_241.png,5.679249716384954,97,42,158,180
+242,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1100,808,strip_242.png,13.017112189077496,59,32,159,128
+243,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,1240,1136,strip_243.png,21.73885953356677,111,25,161,143
+244,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,304,924,strip_244.png,-0.98776039963981,132,14,169,137
+245,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,1232,704,strip_245.png,93.0664855011259,39,52,85,131
+246,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,1056,816,strip_246.png,92.6718645932726,62,25,104,128
+247,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,1104,260,strip_247.png,89.58780725859768,62,25,104,128
+248,./raw_images/2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,916,1816,strip_248.png,111.16125981682828,56,17,115,131
+249,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_003_25k.png,200,1508,1452,strip_249.png,155.02608909411663,55,22,112,141
+25,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,200,1052,136,strip_25.png,127.75549314755881,88,50,155,131
+250,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_003_25k.png,200,1284,1292,strip_250.png,-16.84931141182509,92,54,145,181
+251,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,1532,1300,strip_251.png,40.10090754621224,92,54,145,181
+252,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,1128,1736,strip_252.png,27.484858519613,92,54,145,181
+253,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,680,800,strip_253.png,34.96687944566883,136,73,191,150
+254,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,612,568,strip_254.png,41.735716275981474,123,96,176,150
+255,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,220,288,strip_255.png,35.09581678702612,55,64,108,158
+26,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,200,1032,932,strip_26.png,104.7254827551797,55,64,108,158
+27,./raw_images/2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,200,1184,620,strip_27.png,103.41235764186843,37,36,107,182
