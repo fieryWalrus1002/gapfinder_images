@@ -9,7 +9,7 @@ strip,filename,box_size,x,y,strip_filename,rotation_angle,x1,y1,x2,y2
 104,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,792,1464,strip_104.png,-35.81608074915565,77,70,150,154
 105,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,1092,732,strip_105.png,-29.60445074600491,115,34,182,120
 106,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,900,660,strip_106.png,-17.543257715400127,55,48,155,177
-107,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,1060,1444,strip_107.png,-20.41842551743132,55,48,155,177
+107,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,1040,1364,strip_107.png,-20.41842551743132,65,60,155,172
 108,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,804,944,strip_108.png,-15.185837262201323,167,159,98,83
 109,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,1016,1056,strip_109.png,-13.055247223796602,98,54,146,132
 11,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1312,812,strip_11.png,-30.379126011368346,98,54,146,132
@@ -111,7 +111,7 @@ strip,filename,box_size,x,y,strip_filename,rotation_angle,x1,y1,x2,y2
 197,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,200,640,1020,strip_197.png,-51.64864518326891,112,68,159,129
 198,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,872,304,strip_198.png,57.41163858922659,74,198,103,35
 199,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,1400,792,strip_199.png,67.57957256402631,74,198,103,35
-2,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,264,1574,strip_2.png,-46.54815769897797,74,184,103,75
+2,./raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,264,1574,strip_2.png,-46.54815769897797,74,188,103,35
 20,./raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,1520,572,strip_20.png,30.796062046485968,74,198,103,35
 200,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,1092,784,strip_200.png,55.71312302279104,112,80,157,157
 201,./raw_images/2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,200,908,1244,strip_201.png,64.3741397686576,129,66,169,146
