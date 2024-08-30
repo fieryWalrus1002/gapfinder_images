@@ -8,3 +8,5 @@
 3. the peak widths should be calculated at about 50% of the peak height
 
 - this is a good way to standardize the width of the peaks, and it's a good way to compare the peaks to each other
+
+Done re-extacting. Now I will proceed with 8.
