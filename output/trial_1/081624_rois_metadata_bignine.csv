@@ -1,0 +1,10 @@
+strip,filename,box_size,x,y,strip_filename,rotation_angle,x1,y1,x2,y2
+101,./raw_images/2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,200,1264,1220,strip_101.png,-34.04593735660167,101,11,161,131
+106,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,900,660,strip_106.png,-17.543257715400127,55,28,115,197
+134,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,740,540,strip_134.png,38.20405598398105,92,57,152,171
+135,./raw_images/2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,504,676,strip_135.png,37.568592028827496,101,52,161,168
+161,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,1564,340,strip_161.png,-36.86989764584402,68,0,128,153
+176,./raw_images/2023-2-14_Wild Type_Dark Adapted_1_025_19k.png,200,1904,468,strip_176.png,-3.7461620496036296,71,32,131,166
+187,./raw_images/2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,200,864,1284,strip_187.png,-63.954231699511176,87,49,147,171
+229,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,932,676,strip_229.png,-17.12804747359667,78,5,138,172
+232,./raw_images/2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,200,704,1576,strip_232.png,-67.44912451833304,85,0,145,203
