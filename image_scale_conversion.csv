@@ -1,0 +1,40 @@
+filename,scalebar_filename,scale,x0,x1,scale_pixels,nm_per_pixel,pixel_per_nm
+./raw_images\2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,./scale_bars\2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,790,1053,263,0.7604562737642585,1.315
+./raw_images\2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,./scale_bars\2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,790,1053,263,0.7604562737642585,1.315
+./raw_images\2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,./scale_bars\2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,790,1053,263,0.7604562737642585,1.315
+./raw_images\2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,./scale_bars\2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,./scale_bars\2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,./scale_bars\2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,./scale_bars\2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,./scale_bars\2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,200,812,1031,219,0.91324200913242,1.095
+./raw_images\2022-1-10_Wild Type_Dark Adapted_1_12_29k.png,./scale_bars\2022-1-10_Wild Type_Dark Adapted_1_12_29k.png,200,790,1053,263,0.7604562737642585,1.315
+./raw_images\2022-1-10_Wild Type_Dark Adapted_2_37_19k.png,./scale_bars\2022-1-10_Wild Type_Dark Adapted_2_37_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2022-1-10_Wild Type_Dark Adapted_2_80_19k.png,./scale_bars\2022-1-10_Wild Type_Dark Adapted_2_80_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2022-1-10_Wild Type_Dark Adapted_3_02_19k.png,./scale_bars\2022-1-10_Wild Type_Dark Adapted_3_02_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,./scale_bars\2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,./scale_bars\2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,812,1031,219,0.91324200913242,1.095
+./raw_images\2023-2-14_Wild Type_500uE 1 hour_3_018_19k.png,./scale_bars\2023-2-14_Wild Type_500uE 1 hour_3_018_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-14_Wild Type_500uE 1 hour_3_020_19k.png,./scale_bars\2023-2-14_Wild Type_500uE 1 hour_3_020_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,./scale_bars\2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,./scale_bars\2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-14_Wild Type_Dark Adapted_1_025_19k.png,./scale_bars\2023-2-14_Wild Type_Dark Adapted_1_025_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,./scale_bars\2023-2-14_Wild Type_Dark Adapted_2_009_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,./scale_bars\2023-2-14_Wild Type_Dark Adapted_2_014_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,./scale_bars\2023-2-14_Wild Type_Dark Adapted_2_016_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,./scale_bars\2023-2-9_Wild Type_Dark Adapted_1_027_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-9_Wild Type_Dark Adapted_1_031_19k.png,./scale_bars\2023-2-9_Wild Type_Dark Adapted_1_031_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-9_Wild Type_Dark Adapted_2_041_19k.png,./scale_bars\2023-2-9_Wild Type_Dark Adapted_2_041_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-2-9_Wild Type_Dark Adapted_2_054_19k.png,./scale_bars\2023-2-9_Wild Type_Dark Adapted_2_054_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-7-26_Wild Type_500uE 1 hour_1_014_19k.png,./scale_bars\2023-7-26_Wild Type_500uE 1 hour_1_014_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-7-26_Wild Type_500uE 1 hour_1_033_19k.png,./scale_bars\2023-7-26_Wild Type_500uE 1 hour_1_033_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-7-26_Wild Type_500uE 1 hour_2_013_19k.png,./scale_bars\2023-7-26_Wild Type_500uE 1 hour_2_013_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-7-26_Wild Type_500uE 1 hour_2_025_19k.png,./scale_bars\2023-7-26_Wild Type_500uE 1 hour_2_025_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-7-26_Wild Type_500uE 1 hour_3_008_19k.png,./scale_bars\2023-7-26_Wild Type_500uE 1 hour_3_008_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,./scale_bars\2023-7-26_Wild Type_500uE 1 hour_3_024_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,./scale_bars\2023-9-4_Wild Type_Dark Adapted_1_004_25k.png,200,812,1031,219,0.91324200913242,1.095
+./raw_images\2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,./scale_bars\2023-9-4_Wild Type_Dark Adapted_1_006_19k.png,500,701,1141,440,1.1363636363636365,0.88
+./raw_images\2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,./scale_bars\2023-9-4_Wild Type_Dark Adapted_2_005_25k.png,200,812,1031,219,0.91324200913242,1.095
+./raw_images\2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,./scale_bars\2023-9-4_Wild Type_Dark Adapted_2_012_25k.png,200,812,1031,219,0.91324200913242,1.095
+./raw_images\2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,./scale_bars\2023-9-4_Wild Type_Dark Adapted_2_016_25k.png,200,812,1031,219,0.91324200913242,1.095
+./raw_images\2023-9-4_Wild Type_Dark Adapted_3_003_25k.png,./scale_bars\2023-9-4_Wild Type_Dark Adapted_3_003_25k.png,200,812,1031,219,0.91324200913242,1.095
+./raw_images\2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,./scale_bars\2023-9-4_Wild Type_Dark Adapted_3_012_25k.png,200,812,1031,219,0.91324200913242,1.095
