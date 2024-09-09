@@ -53,7 +53,7 @@ def combine_metadata(strip_metadata_file, rotation_angles_file, output_file):
 # Define file paths
 strip_metadata_file = './strip_images/strip_metadata.csv'
 rotation_angles_file = './rotated_images/rotation_angles.txt'
-output_file = './roi_metadata_revised.csv'
+output_file = './metadata/roi_metadata_revised.csv'
 
 # Combine metadata
 combine_metadata(strip_metadata_file, rotation_angles_file, output_file)

@@ -103,7 +103,7 @@ def main(args):
     os.makedirs(args.output_folder, exist_ok=True)
 
     # Open or create CSV file for image metadata
-    csv_filename = './image_index.csv'
+    csv_filename = './metadata/image_index.csv'
     csv_exists = os.path.exists(csv_filename)
     
     # print out to console what we are doing, what image folders we are looking at, etc

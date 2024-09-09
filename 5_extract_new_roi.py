@@ -41,7 +41,7 @@ def rotate_image(image, angle):
     return rotated
 
 # Load the ROI metadata
-roi_metadata = pd.read_csv('./roi_metadata.csv')
+roi_metadata = pd.read_csv('./metadata/roi_metadata.csv')
 
 # Set padding parameter
 padding = 50  # Adjust this value as needed
@@ -91,6 +91,6 @@ for index, row in roi_metadata.iterrows():
     new_roi_metadata = pd.concat([new_roi_metadata, row.to_frame().T])
 
 # Save the new ROI metadata
-new_roi_metadata.to_csv('./roi_metadata_padded.csv', index=False)
+new_roi_metadata.to_csv('./metadata/roi_metadata_padded.csv', index=False)
 
-print("Processing completed. New ROI metadata saved to './roi_metadata_padded.csv'")
+print("Processing completed. New ROI metadata saved to './metadata/roi_metadata_padded.csv'")

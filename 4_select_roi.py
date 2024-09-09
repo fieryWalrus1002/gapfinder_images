@@ -112,7 +112,7 @@ if __name__ == "__main__":
     image_folder = './rotated_images'  # Folder with rotated images
     rotation_file = './rotated_images/rotation_angles.txt'  # File with rotation angles and strip filenames
     metadata_file = './strip_images/strip_metadata.csv'  # Metadata file from the strips, before rotation
-    output_file = './roi_metadata.csv'  # Output file with ROI coordinates, along with the metadata and angles
+    output_file = './metadata/roi_metadata.csv'  # Output file with ROI coordinates, along with the metadata and angles
     roi_context_dir = "./roi_images_context"
 
     if not os.path.exists(roi_context_dir):

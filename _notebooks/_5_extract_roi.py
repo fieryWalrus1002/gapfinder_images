@@ -22,7 +22,7 @@ import pandas as pd
 # Step 2, iterate through each row in the ROI metadata
 
 # Load the ROI metadata
-roi_metadata_file = './roi_metadata.csv'
+roi_metadata_file = './metadata/roi_metadata.csv'
 roi_metadata = pd.read_csv(roi_metadata_file)
 
 # Folder paths
