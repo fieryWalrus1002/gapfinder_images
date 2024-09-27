@@ -78,7 +78,7 @@ def execute_process(process_name, trial_number, images):
         lumen_contours = get_filtered_contours(p_image_inv, min_area=80) # get the lumen contours, filter out small areas
         
         # create a secondary filter to remove the small contours, based on the area of the contours we found
-        adj_min_area = np.mean([cv2.contourArea(c) for c in lumen_contours])/2
+        adj_min_area = np.mean([cv2.contourArea(c) for c in lumen_contours])/3
         print(f"Adjusted min area: {adj_min_area}")
         
         lumen_contours = get_filtered_contours(p_image_inv, min_area=adj_min_area)
@@ -154,8 +154,12 @@ def execute_process(process_name, trial_number, images):
 if __name__ == "__main__":
 
     trial_number = 1
-    process_names = get_process_names(f"output/trial_{trial_number}/masks")
+    all_process_names = get_process_names(f"output/trial_{trial_number}/masks")
+    
     images = glob.glob(f"output/trial_{trial_number}/rois/*.png")
+    
+    process_names = ["106_otsuOffset", "107_otsuOffset", "126_otsuOffset", "127_otsuOffset", "146_otsuOffset", "147_otsuOffset"]
+    # output\trial_1\masks\106_otsuOffset\strip_101.png
 
     for process_name in process_names:
         print(process_name)

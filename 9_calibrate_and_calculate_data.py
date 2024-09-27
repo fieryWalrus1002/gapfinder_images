@@ -66,6 +66,7 @@ def load_images_for_given_process(image_path, trial_number, process_name):
         p_image = None
 
     if p_image is None:
+        print(image_path)
         raise ValueError(f"Processed image not found for {image_path}")
 
     return image, cv2.bitwise_not(p_image)
@@ -441,10 +442,8 @@ def main():
     metadata_filename = f"{base_path}/081624_rois_metadata_bignine.csv"
     processed_image_path = f"{base_path}/processed_images"
     # process = '107_ostuOffset'
-    
-    print(process_names)
-    
-    #process_names = ["106_ostuOffset", "107_ostuOffset", "126_ostuOffset", "127_ostuOffset", "146_ostuOffset", "147_ostuOffset"]
+        
+    process_names = ["106_otsuOffset", "107_otsuOffset", "126_otsuOffset", "127_otsuOffset", "146_otsuOffset", "147_otsuOffset"]
     
     errors_in_processing = []
     
