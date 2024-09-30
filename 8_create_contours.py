@@ -21,21 +21,21 @@ def load_images_for_given_process(image_path, trial_number, process_name):
         Load images from the given filenames. Returns raw image and the processed image.
     """
     image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    p_image = cv2.imread(f"./output/trial_{trial_number}/masks/{process_name}/{os.path.basename(image_path)}", cv2.IMREAD_GRAYSCALE)
+    mask = cv2.imread(f"./output/trial_{trial_number}/masks/{process_name}/{os.path.basename(image_path)}", cv2.IMREAD_GRAYSCALE)
     
-    return image, p_image
+    return image, mask
 
 def plot_images_for_process(process_name, trial_number):
     images = glob.glob(f"./output/trial_{trial_number}/masks/{process_name}/*.png")
     for image_name in images:
-        image, p_image = load_images_for_given_process(image_name, trial_number, process_name)
+        image, mask = load_images_for_given_process(image_name, trial_number, process_name)
         print(f"Image: {image_name}")
         # display them both together
         plt.subplot(1, 2, 1)
         plt.axis('off')
         plt.imshow(image, cmap='gray')
         plt.subplot(1, 2, 2)
-        plt.imshow(p_image, cmap='gray')
+        plt.imshow(mask, cmap='gray')
         plt.suptitle(f"{os.path.basename(image_name)} - {process_name}")
         plt.axis('off')
         plt.tight_layout()
@@ -71,24 +71,30 @@ def execute_process(process_name, trial_number, images):
     for i, image_name in enumerate(images):
         print(f"Processing image {i+1} of {len(images)}: {image_name}", flush=True)
         
-        image, p_image = load_images_for_given_process(image_name, trial_number, process_name)
+        image, mask = load_images_for_given_process(image_name, trial_number, process_name)
 
-        # get the lumen image
-        p_image_inv = cv2.bitwise_not(p_image) # the p image has black for membrane. Contours is looking for the white area. So to 
-        lumen_contours = get_filtered_contours(p_image_inv, min_area=80) # get the lumen contours, filter out small areas
+        # mask has the membrane in black, and the lumen in white    
+        # invert the image, so that the lumen is black, and the membrane is white. This 
+        # THis makes it easy to get the contours of all of those small areas of 'membrane' that the thresholding has resulted in
+        mask = cv2.bitwise_not(mask) 
+        
+        # get the filtered contours of the membrane from the mask
+        membrane_contours = get_filtered_contours(mask, min_area=80)
         
         # create a secondary filter to remove the small contours, based on the area of the contours we found
-        adj_min_area = np.mean([cv2.contourArea(c) for c in lumen_contours])/3
+        adj_min_area = np.mean([cv2.contourArea(c) for c in membrane_contours])/3
         print(f"Adjusted min area: {adj_min_area}")
         
-        lumen_contours = get_filtered_contours(p_image_inv, min_area=adj_min_area)
+        membrane_contours = get_filtered_contours(mask, min_area=adj_min_area)
         
-        lumen_image = np.ones_like(p_image) # create a white image
+        # create a black image
+        membrane_image = np.zeros_like(mask)
         
-        cv2.drawContours(lumen_image, lumen_contours, -1, (255, 255, 255), -1) # fill the lumen contours with black
+        # draw the white, filtered membrane contours on the black image
+        cv2.drawContours(membrane_image, membrane_contours, -1, (255, 255, 255), -1) 
         
-        # get the membrane image, which is already black in the p_image. So invert the lumen image
-        membrane_image = cv2.bitwise_not(lumen_image)
+        # get the membrane image, where the membranes will be white, on a black background
+        lumen_image = cv2.bitwise_not(membrane_image)
 
         # save the lumen_image and membrane_image to disk as binary images
         lumen_image_filename = f"{output_directory}/lumen/{os.path.basename(image_name)}"
@@ -103,7 +109,7 @@ def execute_process(process_name, trial_number, images):
         image_dict = {
             "image_name": image_name,
             "image": image,
-            "p_image": p_image,
+            "mask": mask,
             "lumen": lumen_image,
             "membrane": membrane_image
         }
@@ -116,11 +122,11 @@ def execute_process(process_name, trial_number, images):
 
     # for i, image_dict in enumerate(images_dict):
         
-        # image_name, image, p_image, lumen_image, membrane_image = images_dict[os.path.basename(images[i])].values()
+        # image_name, image, mask, lumen_image, membrane_image = images_dict[os.path.basename(images[i])].values()
 
         # print("Image", i+1, "of", len(images_dict))
 
-        image_name, image, p_image, lumen_image, membrane_image = image_dict.values()
+        image_name, image, mask, lumen_image, membrane_image = image_dict.values()
 
         fig, ax = plt.subplots(1, 4, figsize=(15, 5))
 
@@ -128,7 +134,7 @@ def execute_process(process_name, trial_number, images):
         ax[0].axis('off')
         ax[0].set_title('Original Image')
 
-        ax[1].imshow(p_image, cmap='gray')
+        ax[1].imshow(mask, cmap='gray')
         ax[1].axis('off')
         ax[1].set_title('Processed Image')
 
@@ -153,14 +159,11 @@ def execute_process(process_name, trial_number, images):
         
 if __name__ == "__main__":
 
-    trial_number = 1
-    all_process_names = get_process_names(f"output/trial_{trial_number}/masks")
+    trial_number = 2
+    process_names = get_process_names(f"output/trial_{trial_number}/masks")
     
     images = glob.glob(f"output/trial_{trial_number}/rois/*.png")
     
-    process_names = ["106_otsuOffset", "107_otsuOffset", "126_otsuOffset", "127_otsuOffset", "146_otsuOffset", "147_otsuOffset"]
-    # output\trial_1\masks\106_otsuOffset\strip_101.png
-
     for process_name in process_names:
         print(process_name)
         execute_process(process_name, trial_number, images)
