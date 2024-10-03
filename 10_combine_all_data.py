@@ -28,6 +28,7 @@ def calculate_mean_lumen_width(lumen_files: list) -> list:
         mean_widths.append(np.mean(widths))
     return mean_widths
 
+
 if __name__ == "__main__":
     trial = 2
     take = 3 # in case you're doing a second combination of data
@@ -57,10 +58,44 @@ if __name__ == "__main__":
     # import all of those files into one big df for each type
     lumen_df = pandas.concat([pandas.read_csv(file) for file in lumen_files])
     membrane_df = pandas.concat([pandas.read_csv(file) for file in membrane_files])
+        
+    # Inspect the lumen_width column
+    print("First few entries of 'lumen_width':")
+    print(lumen_df['lumen_width'].head())
+    print("\nData types in 'lumen_width' column:")
+    print(lumen_df['lumen_width'].apply(type).unique())
 
-    # create a column for lumen_df, called lumen_width_nm, which is the lumen_width column * nm_per_px
+    # Handle lumen_width based on its content
+    if lumen_df['lumen_width'].apply(type).isin([list]).any():
+        # If the column contains lists, compute the mean or extract a value
+        lumen_df['lumen_width'] = lumen_df['lumen_width'].apply(
+            lambda x: np.mean(x) if isinstance(x, list) and x else np.nan
+        )
+    else:
+        # Attempt to convert to numeric
+        lumen_df['lumen_width'] = pandas.to_numeric(lumen_df['lumen_width'], errors='coerce')
+
+    # Handle NaN values
+    nan_count = lumen_df['lumen_width'].isna().sum()
+    print(f"\nNumber of NaN values in 'lumen_width': {nan_count}")
+    if nan_count > 0:
+        # Decide how to handle NaN values (drop or fill)
+        lumen_df = lumen_df.dropna(subset=['lumen_width'])
+
+    # Verify the data type
+    print("\nData type of 'lumen_width' after conversion:")
+    print(lumen_df['lumen_width'].dtype)
+
+    # Perform the multiplication
+    lumen_df['lumen_width_nm'] = lumen_df['lumen_width'] * lumen_df['nm_per_px']
+
+    # Verify the result
+    print("\nFirst few results:")
+    print(lumen_df[['lumen_width', 'nm_per_px', 'lumen_width_nm']].head())
+
     lumen_df['lumen_width_nm'] = lumen_df['lumen_width'] * lumen_df['nm_per_px']
     membrane_df['membrane_width_nm'] = membrane_df['membrane_width'] * membrane_df['nm_per_px']
+
 
     # Now write them out to a csv
     lumen_df.to_csv(f"{csv_export_path}/lumen_{take}.csv", index=False)

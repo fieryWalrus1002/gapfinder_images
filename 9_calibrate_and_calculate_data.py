@@ -478,8 +478,12 @@ def filter_extrawide_membrane_widths(grana_values: dict, width_th: float = 16) -
     right_ips = grana_values["membrane_data"]["right_ips"]
     membrane_widths = grana_values["membrane_width"]
     
+    outliers = []
+    
     # iterate through the 
     for i, (left_ip, right_ip, peak, membrane_width) in enumerate(zip(left_ips, right_ips, membrane_peaks, membrane_widths)):
+        outliers.append("false")
+        
         if i < len(membrane_widths) - 1: # don't go out of bounds
             if membrane_width > width_th and membrane_width == membrane_widths[i+1]:
                 print(f"Recalculating membrane width for {grana_values['image_name']}")
@@ -487,7 +491,9 @@ def filter_extrawide_membrane_widths(grana_values: dict, width_th: float = 16) -
                 left_width, right_width = split_membrane(i, grana_values["membrane_data"], grana_values["lumen_data"], left_ip, right_ip)
                 
                 if left_width == 0 and right_width == 0:
-                    print(f"Error recalculating membrane width for {grana_values['image_name']}")
+                    
+                    print(f"Error in split_membrane for {grana_values['image_name']}")
+                    outliers[i] = "true"
                     continue
                 
                 # update the membrane_widths list
@@ -497,6 +503,7 @@ def filter_extrawide_membrane_widths(grana_values: dict, width_th: float = 16) -
                 print(f"New membrane widths: {left_width}, {right_width}")
             
     grana_values["membrane_width"] = membrane_widths
+    grana_values["outliers"] = outliers
     
     return grana_values
     
@@ -516,13 +523,7 @@ def split_membrane(i:int, membrane_data: dict, lumen_data: dict, left_ip: float,
     lumen_left_ip = lumen_data["left_ips"][i]
     lumen_right_ip = lumen_data["right_ips"][i]
     
-    
-    # assert that left_ip is less than lumen_left_ip, and right_ip is greater than lumen_right_ip
-    try:
-        assert left_ip < lumen_left_ip, f"left_ip: {left_ip}, lumen_left_ip: {lumen_left_ip}"
-        assert right_ip > lumen_right_ip, f"right_ip: {right_ip}, lumen_right_ip: {lumen_right_ip}"
-    except:
-        print(f"Error in split_membrane for {grana_values['image_name']}")
+    if (left_ip > lumen_left_ip) or (right_ip < lumen_right_ip) or (lumen_left_ip > right_ip) or (left_ip > right_ip):
         return (0, 0)
     
     left_width = lumen_left_ip - left_ip
@@ -538,7 +539,8 @@ def main(trial_number:int):
     conversion_df_filename = "./metadata/image_scale_conversion.csv"
     metadata_filename = f"{base_path}/081624_rois_metadata_bignine.csv"
     processed_image_path = f"{base_path}/processed_images"
-        
+    width_th = 16
+    
 
     process_names = os.listdir(processed_image_path)
     if (process_names is None) or (len(process_names) == 0):
@@ -594,8 +596,8 @@ def main(trial_number:int):
                 continue            
             
             grana_values = calculate_grana_values(membrane_data, lumen_data, image_dict)
-            
-            grana_values = filter_extrawide_membrane_widths(grana_values)
+
+            grana_values = filter_extrawide_membrane_widths(grana_values, width_th=width_th)
     
             if grana_values is not None:
                 all_grana_data.append(grana_values)
@@ -651,7 +653,7 @@ def main(trial_number:int):
             membrane_df["index"] = membrane_df.apply(lambda row: list(range(len(row["membrane_width"]))), axis=1)
 
             # Explode the membrane_df based on 'membrane_width' and the new 'membrane_index' column
-            membrane_df = membrane_df.explode(["membrane_width", "peaks","membrane_width_heights", "index"])
+            membrane_df = membrane_df.explode(["membrane_width", "peaks", "outliers", "membrane_width_heights", "index"])
         
             # add the process as a column to the dataframe
             membrane_df["process"] = process
@@ -683,9 +685,12 @@ def main(trial_number:int):
 
             # drop all columens with "membrane" in the name
             lumen_df = lumen_df[lumen_df.columns.drop(list(lumen_df.filter(regex='membrane')))]
-            
+            lumen_df = lumen_df[lumen_df.columns.drop(list(lumen_df.filter(regex='outliers')))]
+                
             # rename 'lumen_peaks' to 'peaks'
             lumen_df = lumen_df.rename(columns={"lumen_peaks": "peaks"})
+            
+            lumen_df["process"] = process
             
             # Add an 'index' column to track the order of each item in the 'lumen_width' list before exploding
             lumen_df["index"] = lumen_df.apply(lambda row: list(range(len(row["lumen_width"]))), axis=1)
@@ -694,14 +699,12 @@ def main(trial_number:int):
             #        'scale_pixels', 'grana_height', 'num_lumen', 'repeat_distance',
             #        'lumen_width', 'lumen_width_heights', 'peaks', 'type', 'index'],
             #       dtype='object')
-            lumen_df.to_csv(f"{output_directory}/tmp_lumen.csv", index=False)
             
             lumen_df = lumen_df.explode(["lumen_width", "peaks", "repeat_distance", "lumen_width_heights","index"])
         
             # add the process as a column to the dataframe            
             print(f"lumen_df.shape after explode: {lumen_df.shape}")
 
-        
         except:
             errors_in_processing.append(f"Error processing lumen data for {process}")
             continue

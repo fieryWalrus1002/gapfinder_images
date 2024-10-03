@@ -364,7 +364,7 @@ if __name__ == "__main__":
         "closing_iterations": 1,
         "opening_iterations": 1
     }
-        
+    
     # create a dictionary of dictionaries, where the key is the method_key+index
     all_th_metadata = {}
     simple_th_metadata = {}
