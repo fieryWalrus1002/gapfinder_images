@@ -1,1 +1,6 @@
 .vscode
+gapfinder.egg-info
+notes
+report
+__pycache__
+.venv

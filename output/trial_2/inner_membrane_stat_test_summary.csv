@@ -1,7 +1,0 @@
-process,strip,n,mean width (nm),sd,CI Lower,CI Upper,test statistic,p-value,significance,test type
-0_otsuOffset,overall,44,11.3328,0.7214,11.1134,11.5521,-1.078,0.2871,ns,t-test
-1_otsuOffset,overall,44,11.4823,0.6988,11.2699,11.6948,0.3069,0.7604,ns,t-test
-2_otsuOffset,overall,44,11.3328,0.7214,11.1134,11.5521,-1.078,0.2871,ns,t-test
-3_otsuOffset,overall,44,11.4823,0.6988,11.2699,11.6948,0.3069,0.7604,ns,t-test
-4_otsuOffset,overall,44,11.3328,0.7214,11.1134,11.5521,-1.078,0.2871,ns,t-test
-5_otsuOffset,overall,44,11.4823,0.6988,11.2699,11.6948,0.3069,0.7604,ns,t-test
