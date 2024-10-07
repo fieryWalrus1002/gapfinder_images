@@ -1,1 +1,11 @@
 .vscode
+gapfinder.egg-info
+notes
+report
+__pycache__
+.venv
+output/processed_images
+output/**/*.png
+output/**/*.jpg
+output/**/*.jpeg
+output/**/*.gif
