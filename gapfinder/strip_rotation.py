@@ -93,6 +93,10 @@ def rotate_strips(input_folder="./strip_images", output_folder="./rotated_images
     # Filter out all of the image_path in image_paths that have already been rotated
     image_paths = [image_path for image_path in image_paths if os.path.basename(image_path) not in existing_rotation_angles]
     
+    if (len(image_paths) == 0):
+        print("All images have already been rotated. Exiting.")
+        return
+    
     for image_path in image_paths:
         image = load_image_bgr(image_path)
         original_image = image.copy()
@@ -100,8 +104,6 @@ def rotate_strips(input_folder="./strip_images", output_folder="./rotated_images
         cv2.imshow('Image', image)
         cv2.setMouseCallback('Image', draw_line)
         
-        displayCommands()
-
         while image_path not in existing_rotation_angles:
             key = cv2.waitKey(0) & 0xFF
             if key == ord('s') or key == ord('n') or key == 9 or key == ord('t'):  # Combine 's', 'n', Tab, and 't' keys

@@ -10,6 +10,22 @@ drawing = False
 top_left_pt, bottom_right_pt = (-1, -1), (-1, -1)
 image = None
 original_image = None
+fixed_width = 0
+delta_theta = 0.0
+theta_increment = 0.5
+
+# For fine adjustment during the boundary selection
+def rotate_image(image, angle):
+    """ Rotates an image by a given angle and returns the rotated image """
+    (h, w) = image.shape[:2]
+    center = (w // 2, h // 2)
+
+    # Perform the rotation
+    M = cv2.getRotationMatrix2D(center, angle, 1.0)
+    rotated = cv2.warpAffine(image, M, (w, h))
+    
+    return rotated
+
 
 # Load the existing metadata
 def load_metadata(metadata_file) -> pd.DataFrame:
@@ -44,24 +60,41 @@ def load_existing_roi_metadata(output_file) -> pd.DataFrame:
 
 # Mouse callback function to draw rectangle and capture ROI coordinates
 def draw_rectangle(event, x, y, flags, param):
-    global x_init, y_init, drawing, top_left_pt, bottom_right_pt, image, original_image
+    global x_init, y_init, drawing, top_left_pt, bottom_right_pt, image, original_image, fixed_width, delta_theta
 
     if event == cv2.EVENT_LBUTTONDOWN:
         drawing = True
         x_init, y_init = x, y
         image = original_image.copy()  # Reset the image to the original state
+        
+        if delta_theta != 0:
+            image = rotate_image(image, delta_theta)
 
     elif event == cv2.EVENT_MOUSEMOVE:
         if drawing:
             top_left_pt = (x_init, y_init)
-            bottom_right_pt = (x, y)
-            temp_image = image.copy()
+            
+            if fixed_width > 0:
+                bottom_right_pt = (x_init + fixed_width, y)
+            else:
+                bottom_right_pt = (x, y)
+            
+            temp_image = original_image.copy()
+            
+            if delta_theta != 0:
+                temp_image = rotate_image(temp_image, delta_theta)
+            
             cv2.rectangle(temp_image, top_left_pt, bottom_right_pt, (0, 255, 0), 2)
             cv2.imshow('Image', temp_image)
 
     elif event == cv2.EVENT_LBUTTONUP:
         drawing = False
-        bottom_right_pt = (x, y)
+        if fixed_width > 0:
+            bottom_right_pt = (x_init + fixed_width, y)
+        else:
+            bottom_right_pt = (x, y)
+        
+        # Draw the final rectangle on the original image
         cv2.rectangle(image, top_left_pt, bottom_right_pt, (0, 255, 0), 2)
         cv2.imshow('Image', image)
 
@@ -78,7 +111,7 @@ def save_roi_coordinates(output_file, metadata: pd.DataFrame, rois: list):
             writer = csv.writer(file)
             
             # the new output file will be all the columns for the metadata, plus the roi columns of x1, y1, x2, y2
-            writer.writerow(metadata_rows.columns.tolist() + ['x1', 'y1', 'x2', 'y2'])
+            writer.writerow(metadata_rows.columns.tolist() + ['x1', 'y1', 'x2', 'y2', 'adj_theta'])
             for roi in rois:
                 # get the metadata row for this roi
                 metadata_row = metadata_rows[metadata_rows['strip_filename'] == roi['strip_filename']]
@@ -101,34 +134,31 @@ def displayCommands():
     print("Press 'q' to quit the program.")
     print("Press 'h' to display this message.")
 
-def combine_metadata_and_angles(metadata: pd.DataFrame, rotation_angles: pd.DataFrame) -> pd.DataFrame:
-    """ Combine the metadata and rotation angles into a single dataframe. Retain only the metadata for the images that have rotation angles. """
-    combined_df = pd.merge(metadata, rotation_angles, on='strip_filename', how='inner')
+
+
+# select_rois(input_folder, output_folder, metadata_file)
+def select_rois(input_folder: str, output_folder: str, output_file: str, metadata_file: str, optional_context_folder: str = None, roi_width: int = 0):
+    global image, original_image, x_init, y_init, drawing, top_left_pt, bottom_right_pt, fixed_width, delta_theta, theta_increment
     
-    print(f"Combined metadata and angles: {combined_df.columns}")
-    return combined_df
+    fixed_width = roi_width
+    
+    os.makedirs(output_folder, exist_ok=True)
+    
+    if optional_context_folder is not None:
+        os.makedirs(optional_context_folder, exist_ok=True)
 
-def select_rois(image_folder='./rotated_images', rotation_file='./rotated_images/rotation_angles.txt', metadata_file='./strip_images/strip_metadata.csv', output_file='./metadata/roi_metadata.csv', roi_context_dir='./roi_images_context'):
-    global image, original_image, x_init, y_init, drawing, top_left_pt, bottom_right_pt
-
-    if not os.path.exists(roi_context_dir):
-        os.makedirs(roi_context_dir)
-
-    metadata = load_metadata(metadata_file)
-    rotation_angles = load_rotation_angles(rotation_file)
-
-    print(f"Metadata columns: {metadata.columns}")
-
-
-    # Merge metadata with rotation angles
-    metadata = combine_metadata_and_angles(metadata, rotation_angles)
+    metadata = pd.read_csv(metadata_file)
 
     # Check if there is an existing ROI metadata file
-    if roi_metadata_exists(output_file):
+    output_file = os.path.join(output_folder, 'roi_metadata.csv')
+    
+    if os.path.exists(output_file):
         # if it already exists, load the existing roi file
         existing_rois = load_existing_roi_metadata(output_file)
         existing_filenames = set(existing_rois['strip_filename'])
+        
         print(f"Existing ROI metadata loaded from {output_file}, including: ")
+        
         for index, row in existing_rois.iterrows():
             print(f"{row['strip_filename']} - x1: {row['x1']}, y1: {row['y1']}, x2: {row['x2']}, y2: {row['y2']}")
     else:
@@ -137,7 +167,10 @@ def select_rois(image_folder='./rotated_images', rotation_file='./rotated_images
     new_rois = [] # List to store the new ROI coordinates until we save them to the output file
 
     # Iterate through images
-    for image_path in glob.glob(os.path.join(image_folder, '*.png')):
+    for image_path in glob.glob(os.path.join(input_folder, '*.png')):
+        # reset the delta_theta
+        delta_theta = 0
+        
         image_name = os.path.basename(image_path)
 
         # If the image_name is already in the existing_rois DataFrame, skip this image
@@ -154,43 +187,80 @@ def select_rois(image_folder='./rotated_images', rotation_file='./rotated_images
 
         while True:
             key = cv2.waitKey(0) & 0xFF
-            if key == ord('s') or key == 9 or key == ord('t'):  # Combine 's', 'n', Tab, and 't' keys
+            
+            if key == ord('a'):  # rotate image counter-clockwise by theta_increment degrees
+                delta_theta += theta_increment
+                image = rotate_image(original_image, delta_theta)
+                cv2.imshow('Image', image)
+            elif key == ord('d'):  #  rotate image clockwise by theta_increment degrees
+                delta_theta -= theta_increment
+                image = rotate_image(original_image, delta_theta)
+                cv2.imshow('Image', image)
+            elif key == ord('s') or key == 9 or key == ord('t'):  # Combine 's', 'n', Tab, and 't' keys
                 roi_data = {
                     'strip_filename': image_name,
                     'x1': x_init,
                     'y1': y_init,
                     'x2': bottom_right_pt[0],
-                    'y2': bottom_right_pt[1]
+                    'y2': bottom_right_pt[1],
+                    'delta_theta': delta_theta
                 }
                 new_rois.append(roi_data)
-                # save the displayed roi to the output file
-                cv2.imwrite(f"{roi_context_dir}/{image_name}", image)
+                if optional_context_folder is not None:
+                    cv2.imwrite(f"{optional_context_folder}/{image_name}", image)
                 break
             elif key == ord('n'):
+                print(f"Skipping {image_name}.")
                 # skip to next
                 break
             elif key == ord('r'):
                 # reset the image
                 image = original_image.copy()
+                delta_theta = 0
                 cv2.imshow('Image', image) 
             elif key == ord('h'):
                 displayCommands()
-                break
             elif key == ord('q'):
-                # now we save the new_rois to the output_file
-                if new_rois:
-                    save_roi_coordinates(output_file, metadata, new_rois)
+                handle_quit(new_rois=new_rois, output_file=output_file, input_folder=input_folder, output_folder=output_folder, metadata=metadata)
+                return
 
-                cv2.destroyAllWindows()
-                return  # Exit the function
 
+    # if we reached the end, save the roi data to the output file
+    # and close the window
+    handle_quit(new_rois=new_rois, output_file=output_file, input_folder=input_folder, output_folder=output_folder, metadata=metadata)
+
+def handle_quit(new_rois: list, output_file: str, input_folder: str, output_folder: str, metadata: pd.DataFrame):
+    
     if new_rois:
         save_roi_coordinates(output_file, metadata, new_rois)
         
+        for roi in new_rois:
+            print(f"ROI for {roi['strip_filename']} saved. x1: {roi['x1']}, y1: {roi['y1']}, x2: {roi['x2']}, y2: {roi['y2']}, delta_theta: {roi['delta_theta']}")
+            
+            image_path = f"{input_folder}/{roi['strip_filename']}"
+            
+            print(f"loading image from {image_path}")
+            image = cv2.imread(image_path)
+            
+            if image is None:
+                print(f"Could not load image from {image_path}.")
+                continue
+            
+            print(f"image shape: {image.shape}")
+            
+            if roi['delta_theta'] != 0:
+                image = rotate_image(image, roi['delta_theta'])
+            
+            sliced_image = image[roi['y1']:roi['y2'], roi['x1']:roi['x2']]
+
+            # check to see if the sliced image is empty
+            if sliced_image.size == 0:
+                print(f"ROI for {roi['strip_filename']} is empty. Skipping.")
+                continue
+
+            cv2.imwrite(f"{output_folder}/{roi['strip_filename']}", sliced_image)
+        print(f"ROI coordinates saved to {output_file}.")
+    else:
+        print("No new ROIs selected, exiting program.")
+        
     cv2.destroyAllWindows()
-
-    print(f"ROI coordinates saved to {output_file}.")
-
-# Example usage:
-# if __name__ == "__main__":
-#     select_rois()
