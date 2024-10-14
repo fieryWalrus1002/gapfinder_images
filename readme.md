@@ -29,7 +29,7 @@ Homebrew is a package manager for macOS, which simplifies the installation of so
    ```bash
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
-3. After installation, add Homebrew to your PATH by running the following command:
+3. After installation, add Homebrew to your PATH by running the following commands. This won't be exact, it will dependon your installation, so check the output from the previous command:
    ```bash
    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
    eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -341,3 +341,31 @@ jupyter notebook
 By following these steps, you’ll be able to clone the **gapfinder** repository, install the required dependencies, and start working with the notebooks in Jupyter on a Windows PC.
 
 Let me know if you need any further clarification or assistance!
+
+### How to create a virtual environment on mac:
+
+Here’s a summary of the commands you’ll use in gapfinder_images folder after setting up Python, Jupyter, and Git on your Mac:
+
+```bash
+
+# Step 1: changes to the gapfinder_images folder
+cd ~/Desktop/HELMUT-DATEN-WSU/MagnusWood/Gapfinder/gapfinder_images
+
+# Step 2: Create a virtual environment in the project folder
+python3 -m venv .venv
+
+# Step 3: Activate the virtual environment
+source .venv/bin/activate
+
+# Step 4:install notebook
+pip3 install notebook
+
+# Step 5: Install dependencies from requirements.txt
+pip3 install -r requirements.txt
+
+# Step 6: Install the gapfinder package in editable mode
+pip3 install -e .
+
+```
+
+---
