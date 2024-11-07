@@ -1,21 +1,13 @@
 strip,filename,box_size,x,y,strip_filename,rotation_angle,x1,y1,x2,y2
-0,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,208,1652,strip_0.png,-49.22818270516165,724,757,1324,1357
-1,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,900,1416,strip_1.png,-38.65980825409009,724,757,1324,1357
-2,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1048,1108,strip_2.png,-28.210169628815258,724,757,1324,1357
-10,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,924,1172,strip_10.png,-37.99873244250467,724,757,1324,1357
-11,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,240,1832,strip_11.png,-39.50767544287256,724,757,1324,1357
-12,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1188,1004,strip_12.png,-26.927677851040503,724,757,1324,1357
-13,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1264,1484,strip_13.png,0.0,724,757,1324,1357
-14,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,552,1680,strip_14.png,-39.499588529798096,724,757,1324,1357
-15,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,900,1416,strip_15.png,-37.98349825527709,724,757,1324,1357
-16,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1048,532,strip_16.png,-48.475232776730095,724,757,1324,1357
-17,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1744,1268,strip_17.png,-26.274212154727437,724,757,1324,1357
-18,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,968,1384,strip_18.png,-41.37851529588266,724,757,1324,1357
-19,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1804,860,strip_19.png,-35.66160502376402,724,757,1324,1357
-20,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1852,340,strip_20.png,-43.34996060442212,724,757,1324,1357
-21,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1116,660,strip_21.png,-31.718368554308032,724,757,1324,1357
-22,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,672,1068,strip_22.png,-15.033258129388296,724,757,1324,1357
-23,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1596,1184,strip_23.png,-8.695502877424769,724,757,1324,1357
-24,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,884,1280,strip_24.png,-17.027207335047944,724,757,1324,1357
-25,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,268,1612,strip_25.png,-15.28330157314739,724,757,1324,1357
-26,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,240,1364,strip_26.png,-8.222813890574903,724,757,1324,1357
+0,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1056,1104,strip_0.png,-30.815705751729187,724,757,1324,1357
+1,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,480,812,strip_1.png,-52.30575953331083,724,757,1324,1357
+2,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1844,824,strip_2.png,-33.326289687115214,724,757,1324,1357
+3,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1692,1272,strip_3.png,-27.538823349575534,724,757,1324,1357
+4,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1680,1164,strip_4.png,-8.604481593092656,724,757,1324,1357
+5,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,200,1524,400,strip_5.png,72.25532837494306,724,757,1324,1357
+6,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,1472,556,strip_6.png,30.068582821862453,724,757,1324,1357
+7,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1232,1440,strip_7.png,52.48088617952368,724,757,1324,1357
+8,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,200,1224,572,strip_8.png,112.24902365721238,724,757,1324,1357
+9,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,200,1348,980,strip_9.png,17.393322146912038,724,757,1324,1357
+10,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_12_29k.png,200,764,1276,strip_10.png,4.953257477842062,724,757,1324,1357
+11,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,200,832,520,strip_11.png,-65.17544523081665,724,757,1324,1357

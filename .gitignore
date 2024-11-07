@@ -1,11 +1,22 @@
+# Ignore the virtual environment and all associated files
 .vscode
-gapfinder.egg-info
-notes
-report
 __pycache__
 .venv
+gapEnv
+gapfinder.egg-info
+
+# private folders for review
+notes
+report
+
+# output folder for the processed images, don't save the images in the git repository
 output/processed_images
 output/**/*.png
 output/**/*.jpg
 output/**/*.jpeg
 output/**/*.gif
+
+# we don't want to track the images and data files
+input/**/*.png
+input/**/*.txt
+input/**/*.csv

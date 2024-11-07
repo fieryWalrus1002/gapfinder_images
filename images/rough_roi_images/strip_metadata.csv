@@ -1,66 +1,13 @@
 strip,filename,box_size,x,y
-0,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,208,1652
-1,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,900,1416
-2,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1048,1108
-3,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1220,1536
-4,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,572,664
-5,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1020,568
-6,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1256,772
-7,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1792,632
-8,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1812,892
-9,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1692,1296
-10,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,924,1172
-11,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,240,1832
-12,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1188,1004
-13,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1264,1484
-14,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,552,1680
-15,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,900,1416
-16,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1048,532
-17,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1744,1268
-18,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,968,1384
-19,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1804,860
-20,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1852,340
-21,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1116,660
-22,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,672,1068
-23,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1596,1184
-24,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,884,1280
-25,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,268,1612
-26,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,240,1364
-27,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,200,1516,412
-28,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,200,360,896
-29,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,172,848
-30,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,1484,556
-31,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,432,420
-32,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,1872,1792
-33,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,476,988
-34,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1140,1748
-35,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1236,1420
-36,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1644,1488
-37,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,200,784,992
-38,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,200,1008,996
-39,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,200,1272,476
-40,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,200,1232,944
-41,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,200,1888,1344
-42,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,200,1104,1624
-43,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,200,208,1060
-44,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,200,1012,476
-45,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_12_29k.png,200,1228,688
-46,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_12_29k.png,200,252,532
-47,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_12_29k.png,200,780,1300
-48,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_2_37_19k.png,200,1048,644
-49,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_2_37_19k.png,200,1544,480
-50,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_2_80_19k.png,200,616,804
-51,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_3_02_19k.png,200,1656,1028
-52,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,200,844,500
-53,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,1384,596
-54,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,1316,1388
-55,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,704,1600
-56,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_3_24_25k.png,200,1908,600
-57,./images/raw_images/2023-2-14_Wild Type_500uE 1 hour_3_018_19k.png,200,524,764
-58,./images/raw_images/2023-2-14_Wild Type_500uE 1 hour_3_018_19k.png,200,1252,1556
-59,./images/raw_images/2023-2-14_Wild Type_500uE 1 hour_3_020_19k.png,200,452,888
-60,./images/raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,876,996
-61,./images/raw_images/2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,200,868,1088
-62,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,984,1124
-63,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1724,1264
-64,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1852,840
+0,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,1056,1104
+1,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,480,812
+2,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1844,824
+3,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1692,1272
+4,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_25_29k.png,200,1680,1164
+5,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_2_41_25k.png,200,1524,400
+6,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_28_19k.png,200,1472,556
+7,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_64_19k.png,200,1232,1440
+8,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_3_69_19k.png,200,1224,572
+9,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_120_25k.png,200,1348,980
+10,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_1_12_29k.png,200,764,1276
+11,./images/raw_images/2022-1-10_Wild Type_Dark Adapted_3_14_19k.png,200,832,520

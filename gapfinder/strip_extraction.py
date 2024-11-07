@@ -38,7 +38,7 @@ def save_strip_metadata(image_name, dest_folder, index, rect_size, x, y):
     with open(csv_path, 'a', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
         csv_writer.writerow([index, image_name, rect_size, x, y])
-            
+
 def clear_directory(directory):
     if os.path.exists(directory):
         shutil.rmtree(directory)
@@ -53,34 +53,34 @@ def extract_strips_from_images(centroids_csv, raw_images_folder, strip_images_fo
         skipped.
     """
     clear_directory(strip_images_folder)
-    
+
     box_size = size
 
     df = pd.read_csv(centroids_csv)
-    
+
     if df.empty:
         print("No centroids found in the CSV file.")
         return
-        
+
     for index, row in df.iterrows():
-        filename = f"{raw_images_folder}/{row[0]}"
-        x = row[1] 
-        y = row[2]
+        filename = f"{raw_images_folder}/{row.iloc[0]}"
+        x = row.iloc[1]
+        y = row.iloc[2]
         new_filename = f"strip_{index}"
-        
+
         bgr_image = cv2.imread(filename)
 
         centroid = extract_centroid(bgr_image, x, y, box_size)
-    
+
         # check to see if the centroid is within the image
         if centroid.shape[0] != box_size or centroid.shape[1] != box_size:
             print(f"Skipping centroid [{x}, {y}] in image {filename} because the centroid is too close to the edge.")
             continue
-    
+
         output_filename = f"{strip_images_folder}/{new_filename}.png"
-        
+
         save_strip_metadata(filename, strip_images_folder, index, box_size, x, y)
-    
+
         # Write the centroid image to strip_images directory
         cv2.imwrite(output_filename, centroid)
 
