@@ -90,7 +90,18 @@ Here are the next steps for installing the **gapfinder** repository on a Mac aft
 
 ---
 
-### Step 6: Clone the gapfinder Repository
+### Step 6: Install tesseract using brew
+
+1. **Install tesseract using brew**:
+
+   - In the Terminal, run the following command:
+     ```bash
+     brew install tesseract
+     ```
+
+---
+
+### Step 7: Clone the gapfinder Repository
 
 1. **Open Terminal**:
 
@@ -119,7 +130,7 @@ Here are the next steps for installing the **gapfinder** repository on a Mac aft
 
 ---
 
-### Step 7: Install Dependencies Using pip
+### Step 8: Install Dependencies Using pip
 
 1. **Install Dependencies from `requirements.txt`**:
 
@@ -139,7 +150,7 @@ Here are the next steps for installing the **gapfinder** repository on a Mac aft
 
 ---
 
-### Step 8: Run Jupyter Notebook
+### Step 9: Run Jupyter Notebook
 
 1. **Launch Jupyter Notebook**:
 
@@ -254,6 +265,16 @@ This will allow you to clone the repository, install the necessary dependencies,
      git config --global user.name "Your Name"
      git config --global user.email "youremail@example.com"
      ```
+
+---
+
+### Step 5: Install tesseract
+
+1. **Install tesseract using the installer:**
+
+   - Download the installer from the following link: [https://github.com/UB-Mannheim/tesseract/wiki](UB Mannheim tesseract github page)
+   - Run the installer and follow the instructions.
+   - You may need to add it to your PATH, which can be done during the installation process.
 
 ---
 
