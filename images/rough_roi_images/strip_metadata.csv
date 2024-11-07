@@ -61,3 +61,6 @@ strip,filename,box_size,x,y
 59,./images/raw_images/2023-2-14_Wild Type_500uE 1 hour_3_020_19k.png,200,452,888
 60,./images/raw_images/2023-2-14_Wild Type_Dark Adapted_1_013_19k.png,200,876,996
 61,./images/raw_images/2023-2-14_Wild Type_Dark Adapted_1_023_19k.png,200,868,1088
+62,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_13_29k.png,200,984,1124
+63,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1724,1264
+64,./images/raw_images/2022-1-10_Wild Type_500uE 1 hour_1_16_29k.png,200,1852,840
