@@ -346,11 +346,19 @@ If you'd rather use Microsoft's VSCode, an integrated development environment, i
      ```
 
 2. **Install gapfinder in Editable Mode:**
+
    - This allows you to modify the code without reinstalling the package every time you make changes. To install gapfinder in editable mode, type:
      ```bash
      pip install -e .
      ```
    - The `.` indicates that you’re installing from the current directory.
+
+3. ** install dependencies in vscode notebook:**
+   - Open the notebook in vscode, and run the following command in a cell:
+     ```python
+        !pip install -r requirements.txt
+        !pip install -e .
+     ```
 
 ---
 
