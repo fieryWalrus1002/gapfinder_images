@@ -62,6 +62,30 @@ You can install Jupyter Notebook using `pip`, which is included with the Python 
    ```
 3. This will open Jupyter in your default web browser.
 
+### Step 3:
+
+#### Option 1: Install Jupyter Notebook
+
+You can install Jupyter Notebook using `pip`, which is included with the Python installation.
+
+1. In the Terminal, run:
+   ```bash
+   pip3 install notebook
+   ```
+2. After installation, launch Jupyter Notebook by running:
+   ```bash
+   jupyter notebook
+   ```
+3. This will open Jupyter in your default web browser.
+
+### Option 2: Install VSCode
+
+If you'd rather use Microsoft's VSCode, an integrated development environment, it is quite nice for working with notebooks and provides a GUI for some of the other steps.
+
+1. Go to (the VSCode download page)[https://code.visualstudio.com/download] and get your version.
+2. Install it, and open it.
+3. Install the Python extension by clicking on the extensions icon on the left side of the window, searching for Python, and clicking install.
+
 ### Step 4: Install Git
 
 Git can also be installed via Homebrew.
