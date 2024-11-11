@@ -255,6 +255,14 @@ This will allow you to clone the repository, install the necessary dependencies,
 
 ---
 
+#### Option 2: Install VSCode
+
+If you'd rather use Microsoft's VSCode, an integrated development environment, it is quite nice for working with notebooks and provides a GUI for some of the other steps.
+
+1. Go to (the VSCode download page)[https://code.visualstudio.com/download] and get your version.
+2. Install it, and open it.
+3. Install the Python extension by clicking on the extensions icon on the left side of the window, searching for Python, and clicking install.
+
 ### Step 3: Install Git
 
 1. **Download Git:**
