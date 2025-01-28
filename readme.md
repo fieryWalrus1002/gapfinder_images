@@ -356,8 +356,8 @@ If you'd rather use Microsoft's VSCode, an integrated development environment, i
 3. ** install dependencies in vscode notebook:**
    - Open the notebook in vscode, and run the following command in a cell:
      ```python
-        !pip install -r requirements.txt
-        !pip install -e .
+        !python -m pip install -r requirements.txt
+        !python -m pip install -e .
      ```
 
 ---

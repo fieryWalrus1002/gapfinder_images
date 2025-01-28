@@ -551,7 +551,7 @@ def clear_existing_data(contour_base_path: str):
     print("Deleted existing grana data files")
 
 
-def calculate_contour_parameters(
+def calculate_repeat_distancecalculate_contour_parameters(
     contour_base_path: str,
     output_folder: str,
     metadata_filename: str,

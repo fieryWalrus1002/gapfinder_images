@@ -185,6 +185,10 @@ def select_rois(input_folder: str, output_folder: str, output_file: str, metadat
 
         print(f"Select ROI for {image_name}. Press 's' to save ROI, 'q' to quit.")
 
+        # add the name of the image to the window title
+        window_title = f"Image - {image_name}"
+        cv2.setWindowTitle('Image', window_title)
+
         while True:
             key = cv2.waitKey(0) & 0xFF
             

@@ -235,7 +235,7 @@ def calculate_lumen_data(membrane_data: dict, lumen_data: dict) -> dict:
         print(f"No membrane data for {image_name}")
         return None
     
-    return lumen_data
+    return lumen_datacalculate_repeat_distance
 
 
 def calculate_repeat_distance(membrane_data:dict) -> float:

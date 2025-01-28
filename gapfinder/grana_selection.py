@@ -114,15 +114,19 @@ def process_images(input_folder, output_filename, verbose=False):
         # Set mouse callback with original and display image
         cv2.setMouseCallback(WINDOW_NAME, mouse_callback, (image, display_image))
 
+        # set the window title to the image name
+        cv2.setWindowTitle(WINDOW_NAME, image_name)
+
         while True:
             temp_img = display_image.copy()
             
             # display the coordinates of the current ROI
-            cv2.putText(temp_img, image_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            # cv2.putText(temp_img, image_name, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
             
             # display the current image index, out of the max number of images
-            cv2.putText(temp_img, f"Image {current_image_index + 1}/{len(images)}", (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            cv2.putText(temp_img, f"Image {current_image_index + 1}/{len(images)}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
             cv2.putText(temp_img, coord_text, (10, temp_img.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+
 
             cv2.imshow(WINDOW_NAME, temp_img)
 
